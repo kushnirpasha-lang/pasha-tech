@@ -32,8 +32,9 @@
   --border:      #C8D8EE;
   --border-2:    #B0C4E0;
   --text:        #0C1A2E;
-  --text-2:      #3A5478;
-  --text-3:      #7A96B8;
+  --text-2:      #2C4464;   /* contrast ≥ 4.5:1 on white */
+  --text-3:      #4A6A8A;   /* contrast ≥ 4.5:1 on white */
+  --accent-light:#1D4ED8;
   --nav-bg:      rgba(240, 244, 251, 0.9);
 }
 
@@ -1078,6 +1079,20 @@ html[data-lang="ru"] .gallery-label { left: 8px; }
 .footer-made { font-size: 0.72rem; }
 .footer-made a { color: var(--accent-light); text-decoration: none; }
 .footer-made a:hover { text-decoration: underline; }
+
+/* ===========================
+   KEYBOARD FOCUS (accessibility)
+=========================== */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.service-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
 /* ===========================
    АДАПТИВ

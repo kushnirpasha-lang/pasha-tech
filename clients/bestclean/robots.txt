@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kushnirpasha-lang.github.io/pasha-tech/clients/bestclean/sitemap.xml

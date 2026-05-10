@@ -58,11 +58,25 @@ initLang();
 /* ============================
    АККОРДЕОН КАРТОЧЕК УСЛУГ
 ============================ */
+function toggleCard(card) {
+  const isOpen = card.classList.contains('expanded');
+  document.querySelectorAll('.service-card.expanded').forEach((c) => {
+    c.classList.remove('expanded');
+    c.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    card.classList.add('expanded');
+    card.setAttribute('aria-expanded', 'true');
+  }
+}
+
 document.querySelectorAll('.service-card').forEach((card) => {
-  card.addEventListener('click', () => {
-    const isOpen = card.classList.contains('expanded');
-    document.querySelectorAll('.service-card.expanded').forEach((c) => c.classList.remove('expanded'));
-    if (!isOpen) card.classList.add('expanded');
+  card.addEventListener('click', () => toggleCard(card));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleCard(card);
+    }
   });
 });
 
