@@ -56,6 +56,17 @@ document.querySelectorAll('.lang-btn').forEach((btn) => {
 initLang();
 
 /* ============================
+   АККОРДЕОН КАРТОЧЕК УСЛУГ
+============================ */
+document.querySelectorAll('.service-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const isOpen = card.classList.contains('expanded');
+    document.querySelectorAll('.service-card.expanded').forEach((c) => c.classList.remove('expanded'));
+    if (!isOpen) card.classList.add('expanded');
+  });
+});
+
+/* ============================
    АНИМАЦИЯ СЕКЦИЙ ПРИ СКРОЛЛЕ
 ============================ */
 const observer = new IntersectionObserver(
